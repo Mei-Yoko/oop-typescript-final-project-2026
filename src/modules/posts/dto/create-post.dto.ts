@@ -58,4 +58,26 @@ export class CreatePostDto {
   @IsString({ each: true })
   @IsOptional()
   tags?: string[];
+
+  @ApiProperty({
+    description: 'Date the post was created',
+    example: '2026-02-16T12:00:00.000Z',
+    required: false,
+    type: String,
+    format: 'date-time',
+  })
+  @IsOptional()
+  @IsString()
+  createdAt?: string;
+
+  @ApiProperty({
+    description: 'Date the post was last updated',
+    example: '2026-02-16T12:00:00.000Z',
+    required: false,
+    type: String,
+    format: 'date-time',
+  })
+  @IsOptional()
+  @IsString()
+  updatedAt?: string;
 }
