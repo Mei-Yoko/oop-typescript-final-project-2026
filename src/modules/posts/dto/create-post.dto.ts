@@ -1,6 +1,6 @@
 import { IsString, IsNotEmpty, IsEnum, IsArray, IsOptional, MinLength, MaxLength } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { PostStatus } from '../../../common/enums';
+import { PostStatus } from '../../../common/enums/post-status.enum';
 
 export class CreatePostDto {
   @ApiProperty({
