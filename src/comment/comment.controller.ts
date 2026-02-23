@@ -12,7 +12,7 @@ export class CommentsController {
   @Post()
   @ApiOperation({ summary: 'Create a new comment' }) // คำอธิบายใน Swagger
   create(@Body() createCommentDto: CreateCommentDto) {
-    // ใช้ DTO ที่คุณเขียนไว้มาตรวจข้อมูล
+    // ใช้ DTO ที่เขียนไว้มาตรวจข้อมูล
     return this.commentsService.create(createCommentDto);
   }
 
@@ -31,7 +31,7 @@ export class CommentsController {
   @Patch(':id')
   @ApiOperation({ summary: 'Update a comment' })
   update(@Param('id') id: string, @Body() updateCommentDto: UpdateCommentDto) {
-    // ใช้ UpdateCommentDto ที่คุณแก้เรื่อง @IsOptional ไว้
+    // ใช้ UpdateCommentDto แก้เรื่อง @IsOptional เพื่อให้สามารถอัปเดตเฉพาะบางฟิลด์ได้
     return this.commentsService.update(+id, updateCommentDto);
   }
 
