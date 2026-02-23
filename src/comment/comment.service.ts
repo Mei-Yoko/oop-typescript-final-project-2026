@@ -40,7 +40,7 @@ export class CommentsService {
       throw new NotFoundException(`Comment with ID ${id} not found`);
     }
 
-    // อัปเดตข้อมูลเฉพาะที่ส่งมา (เพราะคุณใช้ @IsOptional ไว้ใน DTO)
+    // อัปเดตข้อมูลเฉพาะที่ส่งมา 
     this.comments[index] = {
       ...this.comments[index],
       ...updateCommentDto,
