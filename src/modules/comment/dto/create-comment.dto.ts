@@ -26,5 +26,5 @@ export class CreateCommentDto {
   })
   @IsString() 
   @IsNotEmpty()
-  postId!: string;
+  postId!: number;
 }

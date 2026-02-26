@@ -30,5 +30,5 @@ export class UpdateCommentDto {
     })
     @IsString() 
     @IsNotEmpty()
-    postId!: string;
+    postId!: number;
 }
