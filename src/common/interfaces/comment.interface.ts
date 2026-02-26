@@ -1,6 +1,6 @@
 //interface
 export interface Comment {
-    id: string;
+    id: number;
     postId: string;
     author: string;
     content: string;
