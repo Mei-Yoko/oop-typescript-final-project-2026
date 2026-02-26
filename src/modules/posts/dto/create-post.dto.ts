@@ -13,7 +13,7 @@ export class CreatePostDto {
   @IsNotEmpty()
   @MinLength(1)
   @MaxLength(200)
-  title: string;
+  title!: string;
 
   @ApiProperty({
     description: 'Content of the post',
@@ -23,7 +23,7 @@ export class CreatePostDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(1)
-  content: string;
+  content!: string;
 
   @ApiProperty({
     description: 'Author name',
@@ -35,7 +35,7 @@ export class CreatePostDto {
   @IsNotEmpty()
   @MinLength(1)
   @MaxLength(100)
-  author: string;
+  author!: string;
 
   @ApiProperty({
     description: 'Status of the post',
@@ -68,7 +68,7 @@ export class CreatePostDto {
   })
   @IsOptional()
   @IsString()
-  createdAt?: string;
+  createdAt?: Date;
 
   @ApiProperty({
     description: 'Date the post was last updated',
@@ -79,5 +79,5 @@ export class CreatePostDto {
   })
   @IsOptional()
   @IsString()
-  updatedAt?: string;
+  updatedAt?: Date;
 }
