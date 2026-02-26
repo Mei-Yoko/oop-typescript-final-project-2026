@@ -9,7 +9,8 @@ import {
   ParseIntPipe 
 } from '@nestjs/common';
 import { CommentsService } from './comment.service';
-import { CreateCommentDto, UpdateCommentDto } from './dto';
+import { CreateCommentDto } from './dto/create-comment.dto';
+import { UpdateCommentDto } from './dto/update-comment.dto';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
 @ApiTags('Comments') // สำหรับ Phase 6: Swagger
