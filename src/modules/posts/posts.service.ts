@@ -3,7 +3,10 @@ import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { PostStatus } from '../../common/enums';
 import { Post } from '../../common/interfaces';
+<<<<<<< HEAD
 
+=======
+>>>>>>> da25956c11011ed9db09f6bba6daf670bb87103e
 
 @Injectable()
 export class PostsService {

@@ -72,7 +72,7 @@ export class UpdatePostDto {
   })
   @IsOptional()
   @IsString()
-  createdAt?: string;
+  createdAt?: Date;
 
   @ApiProperty({
     description: 'Date the post was last updated',
@@ -83,5 +83,5 @@ export class UpdatePostDto {
   })
   @IsOptional()
   @IsString()
-  updatedAt?: string;
+  updatedAt?: Date;
 }
