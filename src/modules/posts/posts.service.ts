@@ -1,18 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
-import { PostStatus } from '../../../common/enums';
-
-export interface Post {
-  id: string;
-  title: string;
-  content: string;
-  author: string;
-  status: PostStatus;
-  tags: string[];
-  createdAt: Date;
-  updatedAt: Date;
-}
+import { PostStatus } from '../../common/enums';
+import { Post } from '../../common/interfaces';
 
 @Injectable()
 export class PostsService {
