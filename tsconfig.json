@@ -24,6 +24,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "dto", "dto"],
   "exclude": ["node_modules", "dist", "test"]
 }

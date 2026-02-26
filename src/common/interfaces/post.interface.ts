@@ -2,7 +2,7 @@ import { PostStatus } from '../enums/post-status.enum';
 
 //interface
 export interface Post {
-  id: string;
+  id: number;
   title: string;
   content: string;
   author: string;
