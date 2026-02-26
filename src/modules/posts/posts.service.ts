@@ -3,35 +3,32 @@ import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { PostStatus } from '../../common/enums';
 import { Post } from '../../common/interfaces';
-<<<<<<< HEAD
-
-=======
->>>>>>> da25956c11011ed9db09f6bba6daf670bb87103e
 
 @Injectable()
 export class PostsService {
   private posts: Post[] = [];
+  private idCounter = 1; 
 
   create(createPostDto: CreatePostDto): Post {
     const newPost: Post = {
-      id: Math.random().toString(36).substring(2, 9),
+      id: this.idCounter++, 
       ...createPostDto,
-      status: createPostDto.status || PostStatus.DRAFT, 
+      status: createPostDto.status || PostStatus.DRAFT,
       tags: createPostDto.tags || [],
-      createdAt: new Date(), 
-      updatedAt: new Date(), 
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
-
     this.posts.push(newPost);
     return newPost;
   }
+
 
   findAll(): Post[] {
     return this.posts;
   }
 
   findOne(id: string): Post {
-    const post = this.posts.find((p) => p.id === id);
+    const post = this.posts.find((p) => Number(p.id) === Number(id));
     if (!post) {
       throw new NotFoundException(`ไม่พบโพสต์ที่มี ID: ${id}`);
     }
@@ -39,7 +36,7 @@ export class PostsService {
   }
 
   update(id: string, updatePostDto: UpdatePostDto): Post {
-    const index = this.posts.findIndex((p) => p.id === id);
+    const index = this.posts.findIndex((p) => Number(p.id) === Number(id));
     if (index === -1) throw new NotFoundException('ไม่พบโพสต์ที่ต้องการแก้ไข');
 
     this.posts[index] = {
@@ -52,7 +49,7 @@ export class PostsService {
   }
 
   remove(id: string): string {
-    const index = this.posts.findIndex((p) => p.id === id);
+    const index = this.posts.findIndex((p) => Number(p.id) === Number(id));
     if (index === -1) throw new NotFoundException('ไม่พบโพสต์ที่ต้องการลบ');
     
     this.posts.splice(index, 1);
